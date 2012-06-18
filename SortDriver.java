@@ -12,8 +12,10 @@ public class SortDriver{
 		sorters.add(new LinearSorter(Arrays.copyOf(contents,contents.length)));
 		sorters.add(new LinearSorter(Arrays.copyOf(contents,contents.length)));
 		sorters.add(new LinearSorter(Arrays.copyOf(contents,contents.length)));
-		sorters.add(new LinearSorter(Arrays.copyOf(contents,contents.length)));
-		
+		sorters.add(new MergeSorter(Arrays.copyOf(contents,contents.length)));
+		sorters.add(new MergeSorter(Arrays.copyOf(contents,contents.length)));
+		sorters.add(new MergeSorter(Arrays.copyOf(contents,contents.length)));
+
 		try{
 			for(Sorter s : sorters)
 			{
@@ -38,7 +40,7 @@ public class SortDriver{
 		int[] randomArray = new int[numberOfElements];
 		for(int i = 0; i < numberOfElements; i++)
 		{
-			randomArray[i] = rand.nextInt();
+			randomArray[i] = rand.nextInt()%10;
 		}
 
 		return randomArray;
