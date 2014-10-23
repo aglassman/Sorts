@@ -17,11 +17,12 @@ public abstract class Sorter{
 	public void sortAndCalcExeTime() throws SortException{
 		long startTime = System.currentTimeMillis();
 		sort();
+		sortExecutionTime = System.currentTimeMillis() - startTime;
+		
 		if(!validSort())
 		{
 			throw new SortException("Incorrect ordering.");
 		}
-		sortExecutionTime = System.currentTimeMillis() - startTime;
 	}
 	public abstract void sort();
 
